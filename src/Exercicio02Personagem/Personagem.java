@@ -3,10 +3,16 @@ package Exercicio02Personagem;
 public class Personagem
 {
     String nome;
-    int hp;
-    int mana;
+
+    int hpMax;
+    int hpAtual;
+    int manaMax;
+    int manaAtual;
+
+
     double exp;
     int nivel;
+
     int custoQ;
     int custoW;
     int custoE;
@@ -14,12 +20,12 @@ public class Personagem
 
     void habilidadeQ()
     {
-        if (mana >= custoQ)
+        if (manaAtual >= custoQ)
         {
-            mana -= custoQ;
+            manaAtual -= custoQ;
 
             System.out.println("Você usou a habilidade Q.");
-            System.out.println("Mana atual: "+ mana);
+            System.out.println("Mana atual: "+ manaAtual);
         }
         else
         {
@@ -29,12 +35,12 @@ public class Personagem
 
     void habilidadeW()
     {
-        if (mana >= custoW)
+        if (manaAtual >= custoW)
         {
-            mana -= custoW;
+            manaAtual -= custoW;
 
             System.out.println("Você usou a habilidade W.");
-            System.out.println("Mana atual: "+ mana);
+            System.out.println("Mana atual: "+ manaAtual);
         }
         else
         {
@@ -44,12 +50,12 @@ public class Personagem
 
     void habilidadeE()
     {
-        if (mana >= custoE)
+        if (manaAtual >= custoE)
         {
-            mana -= custoE;
+            manaAtual -= custoE;
 
             System.out.println("Você usou a habilidade E.");
-            System.out.println("Mana atual: "+ mana);
+            System.out.println("Mana atual: "+ manaAtual);
         }
         else
         {
@@ -59,16 +65,49 @@ public class Personagem
 
     void habilidadeR()
     {
-        if (mana >= custoR)
+        if (manaAtual >= custoR)
         {
-            mana -= custoR;
+            manaAtual -= custoR;
 
             System.out.println("Você usou a habilidade R.");
-            System.out.println("Mana atual: "+ mana);
+            System.out.println("Mana atual: "+ manaAtual);
         }
         else
         {
             System.out.println("Sem mana o suficiente.");
         }
+    }
+
+    void atacado(int danoRecebido)
+    {
+        hpAtual -= danoRecebido;
+
+        if (hpAtual <= 0 )
+        {
+            System.out.println("Você morreu.");
+            hpAtual = 0;
+        }
+        else
+        {
+            System.out.println("Você recebeu "+danoRecebido+" de dano!");
+            System.out.println("HP atual: "+hpAtual);
+        }
+    }
+
+    void curado(int curaRecebida)
+    {
+        int hpPreCura;
+        hpPreCura = hpAtual;
+        hpAtual += curaRecebida;
+
+        if (hpAtual > hpMax)
+        {
+            hpAtual = hpMax;
+        }
+
+        curaRecebida = (hpAtual - hpPreCura);
+
+        System.out.println("Você foi curado em "+curaRecebida+" pontos de HP");
+        System.out.println("HP atual: "+hpAtual);
     }
 }
