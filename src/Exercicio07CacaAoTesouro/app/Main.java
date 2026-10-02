@@ -3,13 +3,12 @@ package Exercicio07CacaAoTesouro.app;
 import Exercicio07CacaAoTesouro.model.CacaAoTesouro;
 import Exercicio07CacaAoTesouro.model.Pista;
 
-/*
- * Integrante 1: PREENCHER NOME COMPLETO
- * Matrícula: PREENCHER MATRÍCULA
- *
- * Integrante 2: PREENCHER NOME COMPLETO
- * Matrícula: PREENCHER MATRÍCULA
- */
+
+// Integrante 1: Gustavo Santos Andrade
+// Matrícula: 200042947
+
+// Integrante 2: Guilherme Oliveira Cruz
+// Matrícula: 200043566
 
 public class Main
 {
